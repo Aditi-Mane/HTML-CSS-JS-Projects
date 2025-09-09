@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration & Login form</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="status">
+    <h1>Register / Login</h1>
+    <button>Register</button>
+    <button>Login</button>
+  </div>
+  <div class="register">
+    <form id="registration_form">
+      <label for="name">Enter name</label>
+      <input type="text" id="name" required>
+      <span class="error"></span><br>
+
+      <label for="email_reg">Enter email</label>
+      <input type="email" id="email_reg" required>
+      <span class="error"></span><br>
+
+      <label for="password_reg">Enter password </label>
+      <input type="password" id="password_reg" required><br>
+
+      <label for="confirm_pass">Confirm Password</label>
+      <input type="password" id="confirm_pass" required>
+      <span class="error"></span><br>
+
+      <label for="gender">Select gender</label>
+
+      <span><input type="radio" id="female" name="gender">
+      <label for="female">Female</label></span>
+      <span><input type="radio" id="male" name="gender">
+      <label for="male">Male</label></span><br>
+
+      <label for="Hobbies">Select Hobbies</label>
+
+      <span><input type="checkbox" id="sing">
+      <label for="sing">Singing</label></span>
+      <span><input type="checkbox" id="dance">
+      <label for="dance">Dancing</label></span>
+      <span><input type="checkbox" id="read">
+      <label for="read">Reading</label></span><br>
+
+      <label for="country">Choose your country</label>
+      <select name="country" id="country" required>
+        <option value="" disabled selected>-- choose --</option>
+        <option value="India">India</option>
+        <option value="Korea">Korea</option>
+        <option value="Paris">Paris</option>
+        <option value="Japan">Japan</option>
+      </select><br>
+
+      <button type="submit" id="Submit">Submit</button>
+      <button type="reset">Reset</button>
+
+      <p>Already a member?</p>
+      <a href="#" class="go-to-login">Login</a>
+
+    </form>
+  </div>
+  <div class="login">
+    <form>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <span class="error"></span><br>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <span class="error"></span><br>
+
+      <button type="submit" id="loginID">Login</button>
+
+      <p>New here? </p>
+      <a href="#" class="go-to-register">Register</a>
+    </form>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>

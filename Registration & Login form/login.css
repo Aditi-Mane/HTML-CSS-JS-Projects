@@ -1,0 +1,34 @@
+form{
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+.register, .login{
+  border: 2px solid black;
+  padding: 20px;
+  width: 220px;
+  margin-top: 20px;
+  height: auto;
+  border-radius: 10px;
+  display: none;
+}
+
+button{
+  margin: 10px;
+}
+body{
+  height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.status{
+  padding-right: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.error {
+  color: red;
+}
