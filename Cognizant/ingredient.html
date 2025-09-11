@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <style>
+    table {
+      border: 2px solid #0056B3
+    }
+  </style>
+</head>
+<body>
+  <table border="2">
+    <tr>
+      <th>Items</th>
+      <th>Action</th>
+    </tr>
+    <tr>
+      <td>Chips</td>
+      <td><button id="addToCartChips">Add to cart</button></td>
+    </tr>
+    <tr>
+      <td>Soda</td>
+      <td><button id="addToCartSoda">Add to cart</button></td>
+    </tr>
+    <tr>
+      <td>Cookies</td>
+      <td><button id="addToCartCookies">Add to cart</button></td>
+    </tr>
+  </table><br>
+  <table id="cart" border="2">
+    <tr>
+      <th>Items</th>
+      <th>Quantity</th>
+    </tr>
+    <tr>
+      <td>Chips</td>
+      <td id="chipsQuant">0</td>
+    </tr>
+    <tr>
+      <td>Soda</td>
+      <td id="sodaQuant">0</td>
+    </tr>
+    <tr>
+      <td>Cookies</td>
+      <td id="cookiesQuant">0</td>
+    </tr>
+  </table>
+  <script>
+    document.querySelectorAll("button").forEach(item =>{
+      item.addEventListener("click",()=>{
+        if(item.id === "addToCartChips"){
+          let quantChips = parseInt(document.getElementById("chipsQuant").innerText)
+          quantChips = quantChips + 1; 
+          document.getElementById("chipsQuant").innerText = quantChips;
+        } else if(item.id === "addToCartSoda"){
+          let quantSoda = parseInt(document.getElementById("sodaQuant").innerText)
+          quantSoda = quantSoda + 1; 
+          document.getElementById("sodaQuant").innerText = quantSoda;
+        } else if(item.id === "addToCartCookies"){
+          let quantCookies = parseInt(document.getElementById("cookiesQuant").innerText)
+          quantCookies = quantCookies + 1;
+          document.getElementById("cookiesQuant").innerText = quantCookies;
+        }
+      })
+    })
+  </script>
+</body>
+</html>
+

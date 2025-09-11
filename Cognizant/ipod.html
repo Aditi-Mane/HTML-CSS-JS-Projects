@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iPod Interface</title>
+  <style>
+    .ipod {
+      background-color: pink;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="ipod">
+    <div class="screen">
+      <p id="displayText">Welcome to iPod</p>
+    </div>
+    <div class="controls">
+      <button id="play">Play</button>
+      <button id="pause">Pause</button>
+      <!-- TODO: Add a "Next" button here -->
+      <button id="next">Next</button>
+    </div>
+  </div>
+
+  <script>
+    let display = document.getElementById("displayText");
+
+    document.querySelectorAll(".controls button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        if (btn.id === "play") {
+          display.innerText = "Play";
+        } else if (btn.id === "pause") {
+          display.innerText = "Pause";
+        } else if (btn.id === "next") {
+          display.innerText = "Next";
+        }
+      })
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analog Clock</title>
+  <style>
+    .clock {
+      width: 300px;
+      height: 300px;
+      border: 2px solid black;
+      border-radius: 300px;
+      position: relative;
+      margin: 50px auto;
+    }
+
+    .hour-mark {
+      position: absolute;
+      width: 4px;
+      height: 20px;
+      background: black;
+      top: 280px;
+      left: 49.5%;
+      transform-origin: center -130.5px;
+      /* rotate around a point so they stay on the circle border */
+    }
+
+    /* Second hand */
+    .second-hand {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 45%;
+      height: 2px;
+      background: red;
+      transform-origin: 0% 50%;
+      border-radius: 4px;
+    }
+
+    .hand {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform-origin: 0% 50%;
+      border-radius: 4px;
+    }
+
+    .hour-hand {
+      width: 35%;
+      height: 4px;
+      background: black;
+    }
+
+    .minute-hand {
+      width: 45%;
+      height: 3px;
+      background: gray;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="clock">
+    <div class="face">
+      <div class="hour-mark" style="transform: rotate(30deg)"></div>
+      <div class="hour-mark" style="transform: rotate(60deg)"></div>
+      <div class="hour-mark" style="transform: rotate(90deg)"></div>
+      <div class="hour-mark" style="transform: rotate(120deg)"></div>
+      <div class="hour-mark" style="transform: rotate(150deg)"></div>
+      <div class="hour-mark" style="transform: rotate(180deg)"></div>
+      <div class="hour-mark" style="transform: rotate(210deg)"></div>
+      <div class="hour-mark" style="transform: rotate(240deg)"></div>
+      <div class="hour-mark" style="transform: rotate(270deg)"></div>
+      <div class="hour-mark" style="transform: rotate(300deg)"></div>
+      <div class="hour-mark" style="transform: rotate(330deg)"></div>
+      <div class="hour-mark" style="transform: rotate(360deg)"></div>
+      <!-- TODO: Make sure there are 12 hour marks in a Clock at equal intervals -->
+      <div class="hand hour-hand"></div>
+      <div class="hand minute-hand"></div>
+      <div class="hand second-hand"></div>
+    </div>
+  </div>
+
+  <script>
+    let secondsHand = document.querySelector(".second-hand");
+    let minuteHand = document.querySelector(".minute-hand");
+    let hourHand = document.querySelector(".hour-hand");
+    function secondsLogic() {
+      const now = new Date();
+      const seconds = now.getSeconds();
+      const minutes = now.getMinutes();
+      const hours = now.getHours() % 12;
+
+      // Convert degrees to units
+      const secdegrees = seconds * 6 - 90;
+      const mindeg = minutes * 6 + seconds * 0.1 - 90;
+      const hourdeg = hours * 30 + minutes * 0.5 - 90;
+
+      // Apply rotation to second hand
+      secondsHand.style.transform = `rotate(${secdegrees}deg)`;
+      minuteHand.style.transform = `rotate(${mindeg}deg)`;
+      hourHand.style.transform = `rotate(${hourdeg}deg)`;
+    }
+    setInterval(secondsLogic, 1000);
+    secondsLogic();
+  </script>
+</body>
+
+</html>

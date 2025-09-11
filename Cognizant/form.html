@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+  <style>
+    form{
+      display: flex;
+      flex-direction: column;
+      width: 200px;
+      gap: 20px;
+    }
+    form input {
+      border-radius: 5px;
+      border:2px solid purple;
+      padding:3px;
+    }
+    #demo {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <input type="text" id="name" placeholder="Enter name" required>
+    <input type="password" id="pass" placeholder="Enter Password" required>
+    <input type="password" id="re-pass" placeholder="Retype password" required>
+
+    <p id="demo"></p>
+    <button id="Submit" type="submit" onclick="passwordformValidation(event)">Submit</button>
+
+  </form>
+  <script>
+    function passwordformValidation(event){
+      let name = document.getElementById("name").value.trim();
+      let pass = document.getElementById("pass").value.trim();
+      let repass = document.getElementById("re-pass").value.trim();
+      let error = document.getElementById("demo")
+
+      error.textContent = '';
+
+      let isValid = true;
+      if(name === ""){
+        error.innerText = "Name field is empty"
+        isValid = false;
+      }
+
+      if(pass !== repass){
+        error.innerText = "Passwords don't match"
+        isValid = false;
+      }
+
+      if(!isValid){
+        event.preventDefault();
+      } else {
+        alert("Form submitted successfully!");
+      }
+      
+    }
+  </script>
+</body>
+</html>
