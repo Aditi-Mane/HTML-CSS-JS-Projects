@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot</title>
+  <style>
+    .userMsg {
+      width: 100px;
+      padding: 8px;
+      padding-left: 100px;
+      border-radius: 5px;
+      text-align: right;
+      background-color: rgb(134, 134, 255);
+    }
+
+    .botMsg {
+      width: 100px;
+      padding: 8px;
+      padding-right: 100px;
+      border-radius: 5px;
+      text-align: left;
+      background-color: rgb(219, 155, 57);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="chat-container">
+    <div class="chat-box" id="chatBox">
+      <div class="chat-message">Welcome to the chatbot!</div>
+    </div>
+
+    <div class="chat-input">
+      <input type="text" id="userInput" placeholder="Type a message...">
+      <button id="sendBtn">Send</button>
+    </div>
+  </div>
+
+  <script>
+    const chatBox = document.getElementById("chatBox");
+    const userInput = document.getElementById("userInput");
+    const sendBtn = document.getElementById("sendBtn");
+
+    sendBtn.addEventListener("click", () => {
+      let message = document.querySelector("#userInput").value.trim();
+
+      if (message) {
+        let userMsg = document.createElement("div");
+        userMsg.classList.add("userMsg");
+        userMsg.innerText = message;
+
+        chatBox.appendChild(userMsg);
+        userInput.value = "";
+      }
+
+      if (message == "hi" || message == "hello") {
+        let botMsg = document.createElement("div");
+        botMsg.classList.add("botMsg");
+        botMsg.innerText = "hello, I am bot"
+        chatBox.appendChild(botMsg);
+      } else {
+        let botMsg = document.createElement("div");
+        botMsg.classList.add("botMsg");
+        botMsg.innerText = "Sorry, I don't understand that.";
+        chatBox.appendChild(botMsg);
+      }
+    });
+  </script>
+
+</body>
+
+</html>

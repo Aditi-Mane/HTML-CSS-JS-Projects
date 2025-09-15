@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animal Display</title>
+  <style>
+    body{
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      justify-content: center;
+      align-items: center;
+    }
+    .info img {
+      display: none;
+      height: 100px;
+      padding-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1> Who's information do you want to see?</h1>
+  <button>Puppies</button>
+  <button>Kittens</button>
+  <div class="info">
+    <img src="puppies.jpg" alt="puppies">
+    <img src="kittens.jpg" alt="kittens">
+    <p id="animal-fact"></p>
+  </div>
+  <script>
+    let imagePuppy = document.querySelectorAll(".info img")[0];
+    let imageKitten = document.querySelectorAll(".info img")[1];
+    let fact = document.getElementById("animal-fact");
+    document.querySelectorAll("button").forEach(btn=>{
+      btn.addEventListener("click",()=>{
+        if(btn.innerText === "Puppies"){
+          imagePuppy.style.display = "block";
+          imageKitten.style.display = "none";
+          fact.innerText = "I am a puppy picture";
+        } else if(btn.innerText === "Kittens"){
+          imageKitten.style.display = "block";
+          imagePuppy.style.display = "none";
+          fact.innerText = "I am a kitten picture";
+        }
+      })
+    })
+  </script>
+  
+</body>
+</html>
