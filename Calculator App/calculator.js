@@ -5,7 +5,7 @@ document.querySelectorAll(".grid button").forEach((btn)=>{
   btn.addEventListener("click" ,()=>{
 
     //for the CLEAR button
-    if (btn.innerText === "CLEAR"){
+    if (btn.innerText === "ERASE"){
       currentInput = "";
       document.querySelector(".enter").innerHTML = "ENTER INPUT";
       document.querySelector(".answer").innerHTML = currentInput;
