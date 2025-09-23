@@ -1,0 +1,16 @@
+.box {
+  height: 200px;
+  width: 200px;
+  border: 2px solid black;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255 255 255)
+
+}
+button {
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+}
