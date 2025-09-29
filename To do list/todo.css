@@ -1,0 +1,35 @@
+.currentTasks, .counter {
+  width: 230px;
+  height: auto;
+  margin: 10px 0;
+  border-radius: 10px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #1E90FF;
+  color: white;
+}
+.currentTasks > span {
+  margin: 10px;
+}
+.task{
+  width: 210px;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  padding: 5px;
+  color: black;
+  font-style: bold;
+  background-color:#87CEFA; 
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+}
+
+.delete {
+  margin-left: auto;
+}
+
